@@ -1,0 +1,19 @@
+passport is node js library helps us add authentication
+it comes with strategies (techniques) we will use local strategy
+facebook uses oauth that allow user to enter a application using their account
+
+
+
+
+initially i used vendor's ad id though i called it 
+but now i decided to use pair of vendor user and other user and vendor can't create a room directly
+
+
+i have already set up login routes using passport.authenticate method
+
+now i want to prevent unwanted access and i see password provide isAuthenticate method that has been added to req in a session
+
+we will combine it with a middleware in order to serve many routes 
+
+
+whenever vendor type reply its going to standard user router and it is not available for vendor
