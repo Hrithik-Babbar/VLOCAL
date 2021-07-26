@@ -178,6 +178,6 @@ app.put('/vendors/:vname', isLoggedIN, async (req, res) => {
     //...is expand operator
     res.redirect(`/vendors`);
 })
-app.listen(3000, () => {
+app.listen(80, () => {
     //app.listen set port which will listen to our request
 })
