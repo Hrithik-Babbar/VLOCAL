@@ -1,37 +1,62 @@
 <% layout('layouts/boilerplate') %>
-    <h1>All Vendors
-    </h1>
-    <div style="padding-bottom: 50px;">
-        <% for (let vendor of vendors) {%>
-            <div class="card mb-3 " style="margin-bottom: 100px;">
-                <div class=" row">
-                    <div class="col-md-4 ">
-                        <img class="img-fluid" alt="alt" src="<%= vendor.image %>">
-                    </div>
-                    <div class="col-md-7">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%= vendor.title %>
-                            </h5>
-                            <p class="card-text">
-                                <small class="text-muted">
-                                    <%= vendor.location%>
-                                </small>
-                            </p>
-                            <p class="card-text">
-                                <%= vendor.service %>
-                            </p>
-                            <p class="card-text">
-                                <%= vendor.username %>
-                            </p>
+    <style>
+        body {
+            background: #00b09b;
+            background: -webkit-linear-gradient(to right, #00b09b, #96c93d);
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            min-height: 100vh;
+        }
 
+        #content {
+            color: whitesmoke;
+            background-color: teal;
+        }
+    </style>
+    <div style="padding-bottom: 50px;">
+        <div class=" row">
+            <% for (let vendor of vendors) {%>
+                <div class="card mb-3 col-md-10 mx-auto" style="margin-bottom: 100px;">
+                    <div class=" row" id="content">
+                        <div class="col-md-3 ">
+                            <img class="img-fluid" alt="alt" src="<%= vendor.image %>"
+                                class="ml-lg-5 order-1 order-lg-2" width="300px">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h1 class="card-title">
+                                    <%= vendor.title %>
+                                        <%if( currentUser && currentUser.username==vendor.username){%>
+                                            <a class="card-link btn btn-info"
+                                                href="/vendors/<%=vendor.username%>/edit">EDIT</a>
+                                            <a class="card-link btn ">
+                                                <form action="/vendors/<%=vendor.username%>?_method=DELETE"
+                                                    method="POST">
+                                                    <button class=" card-link btn  btn-danger">Delete</button>
+                                                </form>
+                                            </a>
+                                            <% } %>
+
+                                </h1>
+                                <p class="card-text">
+                                    <small>
+                                        <%= vendor.location%>
+                                    </small>
+                                </p>
+                                <p class="card-text">
+                                    <%= vendor.service %>
+                                </p>
+                                <h3 class="card-text">
+                                    <%= vendor.username %>
+                                </h3>
+
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <a href="/vendors/<%=vendor.username%>"><i class="fa fa-comments-o"
+                                    style="font-size:48px;color:red"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-1">
-                        <a href="/vendors/<%=vendor.username%>"><i class="fa fa-comments-o"
-                                style="font-size:48px;color:red"></i></a>
-                    </div>
                 </div>
-            </div>
-            <% } %>
+                <% } %>
+        </div>
     </div>

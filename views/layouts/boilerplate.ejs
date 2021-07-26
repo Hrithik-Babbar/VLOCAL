@@ -16,11 +16,13 @@
             width: 100%;
         }
     </style>
+    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+
 </head>
 
 <body class=" vh-100 d-flex flex-column ">
     <%- include('../partials/navbar')%>
-        <main class="container vh-100  mt-3">
+        <main class="container   mt-2 ">
             <%- body %>
         </main>
         <%- include('../partials/footer')%>

@@ -1,10 +1,17 @@
 <% layout('layouts/boilerplate') %>
-
-    <div id="top" class="vh-100 d-flex flex-column">
-        <div>
+    <style>
+        body {
+            background: #00b09b;
+            background: -webkit-linear-gradient(to right, #00b09b, #96c93d);
+            background: linear-gradient(to right, #00b09b, #96c93d);
+            min-height: 100vh;
+        }
+    </style>
+    <div id="top" class=" d-flex flex-column min-vh-100" style=" padding-bottom: 125px;">
+        <div class="text-white">
             <% for(let convo of arg.convos){ %>
                 <%if(currentUser.username==convo.username){%>
-                    <div class=" mb-3 d-flex flex-row-reverse " style="color: lightcoral;">
+                    <div class=" mb-3 d-flex flex-row-reverse " style="color: black;">
                         <h1>
                             <%=convo.body%>
                         </h1>
@@ -16,17 +23,18 @@
                         <% } %>
                             <% } %>
         </div>
-        <div class="mt-auto " style="margin-bottom: 75px;">
+        <div class="mt-auto ">
             <form action="/vendors/<%=arg.vendorname%>/<%=arg.username%>/convos" method="POST">
                 <div class="row">
                     <div class="col-8 offset-2"><input class="form-control" type="text" name="convo[body]">
                     </div>
                     <div class="col-2">
                         <button class="btn btn-success">
-                            <i class="fa fa-paper-plane" style="font-size:16px;color:red"></i>
+                            <i class="fa fa-paper-plane" style="font-size:16px;color:white"> SEND</i>
                         </button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
+    <script src="/sock.js"></script>

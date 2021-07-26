@@ -17,3 +17,7 @@ we will combine it with a middleware in order to serve many routes
 
 
 whenever vendor type reply its going to standard user router and it is not available for vendor
+
+
+
+deleting associated convos  - mongoose middleware
