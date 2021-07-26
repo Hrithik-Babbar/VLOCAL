@@ -13,7 +13,7 @@ const User = require('./models/user');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const { isLoggedIN } = require('./middleware');
-const io = require('socket.io')(8000)
+const io = require('socket.io')(443)
 const users_connected = {}
 //connecting to mongodb instance running on 27017 of localhost
 //mongodb+srv://our_first_user:xUX5HSeGU6iEaDOr@cluster0.qxmfl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
