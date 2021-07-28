@@ -87,7 +87,7 @@ app.get('/vendors', async (req, res) => {
     const vendors = await Vendor.find({});
     res.render('vendors/index', { vendors });
 })
-app.get('/landing', (req, res) => {
+app.get('/', (req, res) => {
     res.render('vendors/landing');
 })
 app.get('/plan', (req, res) => {
