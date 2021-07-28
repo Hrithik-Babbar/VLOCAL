@@ -21,7 +21,7 @@ const users_connected = {}
 //connecting to mongodb instance running on 27017 of localhost
 //mongodb+srv://our_first_user:xUX5HSeGU6iEaDOr@cluster0.qxmfl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 //mongodb://localhost:27017/Vendor
-mongoose.connect('mongodb://localhost:27017/Vendor', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false, useFindAndModify: false })
+mongoose.connect('mongodb+srv://our_first_user:xUX5HSeGU6iEaDOr@cluster0.qxmfl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false, useFindAndModify: false })
     .then(() => {
         console.log("DataBase Connected");
     })
