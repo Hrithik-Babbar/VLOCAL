@@ -9664,7 +9664,7 @@ html {
 }
 
 .page-section {
-  padding-bottom: 6rem;
+  padding-bottom: 2.55rem;
 }
 .page-section .page-section-heading {
   font-size: 2.25rem;
@@ -9678,7 +9678,6 @@ html {
 }
 
 .divider-custom {
-  margin: 1.25rem 0 1.5rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -9725,10 +9724,9 @@ html {
 }
 
 .masthead {
-  padding-bottom: 6rem;
+  padding-bottom: 3rem;
 }
 .masthead .masthead-heading {
-  font-size: 2.75rem;
   line-height: 2.75rem;
 }
 .masthead .masthead-subheading {
@@ -9740,10 +9738,9 @@ html {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-bottom: 6rem;
+    padding-bottom: 3rem;
   }
   .masthead .masthead-heading {
-    font-size: 4rem;
     line-height: 3.5rem;
   }
   .masthead .masthead-subheading {

@@ -13,8 +13,7 @@ const User = require('./models/user');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const { isLoggedIN } = require('./middleware');
-const dort = process.env.PORT || 443;
-const io = require('socket.io')(dort)
+const io = require('socket.io')(8000)
 const users_connected = {}
 //connecting to mongodb instance running on 27017 of localhost
 //mongodb+srv://our_first_user:xUX5HSeGU6iEaDOr@cluster0.qxmfl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
@@ -179,7 +178,6 @@ app.put('/vendors/:vname', isLoggedIN, async (req, res) => {
     //...is expand operator
     res.redirect(`/vendors`);
 })
-const port = process.env.PORT || 80
-app.listen(port, () => {
+app.listen(3000, () => {
     //app.listen set port which will listen to our request
 })
