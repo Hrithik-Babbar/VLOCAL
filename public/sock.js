@@ -6,7 +6,6 @@ window.onload = function example() {
     socket.emit('new-user-joined', temp_name);
 }
 socket.on('user-joined', temp_name => {
-    console.log('hi');
     if (temp_name != str)
         window.location.reload();
 })
