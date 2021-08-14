@@ -73,7 +73,7 @@ io.on('connection', socket => {
         users_connected[socket.id] = temp_name;
         setTimeout(function () {
             socket.broadcast.emit('user-joined', temp_name);;
-        }, 10000)
+        }, 1000)
     })
 })
 app.get('/register', (req, res) => {
