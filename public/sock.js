@@ -7,8 +7,5 @@ function example() {
     socket.emit('new-user-joined', temp_name);
 }
 socket.on('user-joined', temp_name => {
-    if (temp_name != str) {
-        console.log("2nd " + temp_name);
-        window.location.replace(location.href)
-    }
+    console.log("2nd " + temp_name);
 })
