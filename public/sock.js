@@ -1,6 +1,6 @@
 const socket = io.connect();
-const d = new Date();
-const str = `${d}`
+let d = new Date();
+let str = `${d}`
 function example() {
     const temp_name = str;
     console.log("1st" + str);
@@ -9,6 +9,6 @@ function example() {
 socket.on('user-joined', temp_name => {
     if (temp_name != str) {
         console.log("2nd " + temp_name);
-        window.location = location.href;
+        window.location.replace(location.href)
     }
 })
