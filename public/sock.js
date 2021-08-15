@@ -9,6 +9,6 @@ function example() {
 socket.on('user-joined', temp_name => {
     if (temp_name != str) {
         console.log("2nd " + temp_name);
-        window.location.reload();
+        window.location = location.href;
     }
 })
