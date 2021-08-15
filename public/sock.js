@@ -8,4 +8,5 @@ function example() {
 }
 socket.on('user-joined', temp_name => {
     console.log("2nd " + temp_name);
+    window.location.replace(location.href)
 })
