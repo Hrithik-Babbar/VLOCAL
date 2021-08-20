@@ -17,11 +17,11 @@
             <% for (let vendor of vendors) {%>
                 <div class="card mb-3 col-md-10 mx-auto" style="margin-bottom: 100px;">
                     <div class=" row" id="content">
-                        <div class="col-md-3 ">
-                            <img class="img-fluid" alt="alt" src="<%= vendor.image %>"
-                                class="ml-lg-5 order-1 order-lg-2" width="300px">
+                        <div class="col-md-4 " style="margin: auto;">
+                            <img class="img-fluid mt-auto" alt="alt" src="<%= vendor.image %>"
+                                class="ml-lg-5 order-1 order-lg-2">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                             <div class="card-body">
                                 <h1 class="card-title">
                                     <%= vendor.title %>
@@ -51,7 +51,7 @@
 
                             </div>
                         </div>
-                        <div class="col-md-1">
+                        <div class="col-md-1" style="padding: unset;">
                             <a href="/vendors/<%=vendor.username%>"><i class="fa fa-comments-o"
                                     style="font-size:48px;color:red"></i></a>
                         </div>
