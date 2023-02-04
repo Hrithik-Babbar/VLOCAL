@@ -14,8 +14,12 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const { isLoggedIN } = require('./middleware');
 const port = process.env.PORT || 8000;
+var fs = require('fs')
 var http = require('http');
-var server = http.createServer(app);
+var server = http.createServer({
+    key: fs.readFileSync('server.key'),
+    cert: fs.readFileSync('server.cert')
+}, app)
 const io = require('socket.io')(server)
 let users_connected = {}
 //connecting to mongodb instance running on 27017 of localhost
